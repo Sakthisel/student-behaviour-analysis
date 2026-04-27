@@ -1,0 +1,63 @@
+# =========================
+# Core Data Science
+# =========================
+numpy==1.26.4               # Numerical computing (arrays, math ops)
+pandas==2.2.2               # Data manipulation (DataFrames)
+scipy==1.11.4               # Scientific computing (optimization, stats)
+scikit-learn==1.4.2         # Classical ML algorithms
+
+# =========================
+# Visualization
+# =========================
+seaborn==0.13.2             # Statistical data visualization
+matplotlib==3.8.4           # Base plotting library (used by seaborn)
+
+# =========================
+# Computer Vision
+# =========================
+opencv-python==4.9.0.80     # Image & video processing
+ultralytics==8.2.0          # YOLO (object detection)
+mediapipe==0.10.14          # Face, pose, hand tracking
+deepface==0.0.93            # Face recognition & emotion analysis
+
+# =========================
+# Deep Learning (PyTorch)
+# =========================
+torch                       # Core deep learning framework (install per CPU/GPU)
+torchvision                 # Vision utilities for PyTorch
+
+# =========================
+# NLP / LLM Stack
+# =========================
+transformers==4.41.2        # Pretrained LLMs (Hugging Face)
+datasets==2.19.1            # Dataset loading & processing
+accelerate==0.30.1          # Multi-GPU / distributed training
+peft==0.11.1                # Parameter-efficient fine-tuning (LoRA, etc.)
+trl==0.8.6                  # Reinforcement learning for LLMs
+bitsandbytes==0.43.1        # Quantization (low memory usage)
+
+# =========================
+# API-based AI Models
+# =========================
+
+openai==1.30.1              # OpenAI API client
+google-generativeai==0.7.2  # Google Gemini API client
+
+# =========================
+# Gradient Boosting Models
+# =========================
+xgboost==2.0.3              # High-performance boosting algorithm
+lightgbm==4.3.0             # Fast gradient boosting framework
+
+# =========================
+# Web / App Deployment
+# =========================
+streamlit==1.33.0           # Interactive web apps for ML
+fastapi==0.111.0            # Backend API framework
+uvicorn==0.30.1             # ASGI server for FastAPI
+
+# =========================
+# Utilities
+# =========================
+python-dotenv==1.0.1        # Load environment variables from .env
+protobuf==4.25.3            # Serialization (required by many ML libs)

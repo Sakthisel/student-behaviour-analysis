@@ -1,0 +1,18 @@
+.DS_Store
+.ipynb_checkpoints
+.vscode
+__pycache__
+
+.env
+docs
+models
+outputs
+videos
+
+# custom_yolo
+custom_yolo/dataset
+custom_yolo/runs
+custom_yolo/models
+
+# llm
+llm/data
