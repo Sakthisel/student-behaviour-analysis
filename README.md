@@ -2,13 +2,9 @@
 
 This project is a comprehensive end-to-end intelligent system designed to analyze student behavior during group discussions or collaborative environments. It combines Computer Vision, Machine Learning, Deep Learning, and Large Language Models to extract meaningful insights from video data and generate actionable performance reports.
 
----
-
 ## PROJECT OBJECTIVE
 
 The primary goal of this project is to automatically evaluate student participation, engagement, and behavior in group discussions using video input. Traditional evaluation methods are subjective and manual, whereas this system provides a scalable, data-driven, and automated approach.
-
----
 
 ## SYSTEM OVERVIEW
 
@@ -21,12 +17,11 @@ The system processes input video data and performs the following:
 3. Quantifies engagement using Machine Learning and Deep Learning models  
 4. Generates structured outputs and detailed performance reports  
 
----
-
 ## PROJECT STRUCTURE
 
 The project follows a modular and scalable architecture with clearly separated components for Computer Vision, Machine Learning, and LLM processing.
 
+```txt
 student-behaviour-analysis/
 │
 ├── custom_yolo/            # YOLO model training & inference
@@ -45,15 +40,13 @@ student-behaviour-analysis/
 ├── config.py               # Global configuration
 ├── main.py                 # End-to-end pipeline runner
 │
-├── setup.sh                # Environment setup script
-├── run.sh                  # Run complete pipeline
+├── scripts                 # Environment setup and Run complete pipeline script
 ├── requirements.txt        # Python dependencies
 │
 ├── .env                    # Environment variables (API keys)
 ├── .gitignore              # Ignore files
 ├── README.md               # Project documentation
-
----
+```
 
 ## INSTALLATION & SETUP
 
@@ -71,7 +64,7 @@ cd student-behaviour-analysis
 Run the setup script to install dependencies and prepare the environment:
 
 ```bash
-sh setup.sh
+sh scripts/setup.sh
 ```
 
 ### Run Full Pipeline
@@ -81,15 +74,13 @@ Execute the complete system using:
 ```md
 > Make sure setup.sh has execution permission:
 ```bash
-chmod +x setup.sh run.sh
+chmod +x setup.sh scripts/run.sh
 ```
 ### Notes
 - Ensure Python is installed (3.9+ recommended)
 - Make sure input videos are placed in the videos/ folder
 - setup.sh installs required dependencies
 - run.sh executes the end-to-end pipeline
-
----
 
 ## ARCHITECTURE
 
@@ -111,8 +102,6 @@ runs/trained_models/weights/best.pt
 ```bash
 python -m custom_yolo.main
 ```
-
----
 
 ### 2. COMPUTER VISION PIPELINE
 
@@ -143,8 +132,6 @@ outputs/csv/student_summary.csv
 python -m cv_pipelines.main
 ```
 
----
-
 ### 3. MACHINE LEARNING PIPELINE
 
 This module builds predictive models based on extracted features.
@@ -169,7 +156,6 @@ models/trained_models/
 ```bash
 python -m ml.main
 ```
----
 
 ### 4. ENGAGEMENT CLASSIFICATION
 
@@ -184,8 +170,6 @@ This classification is based on:
 - Engagement Score  
 - Behavior Score  
 - GD Score  
-
----
 
 ### 5. LLM-BASED REPORT GENERATION
 
@@ -202,8 +186,6 @@ A Large Language Model (LLM) is used to generate human-readable performance repo
 - Behavioral observations  
 - Actionable suggestions  
 
----
-
 ### 6. FULL PIPELINE EXECUTION
 
 The entire system can be executed using a single command, which runs:
@@ -219,23 +201,22 @@ The entire system can be executed using a single command, which runs:
 python -m main
 ```
 
----
-
 ## OUTPUT SUMMARY
 
 **YOLO Model:**
-runs/trained_models/weights/best.pt  
+`runs/trained_models/weights/best.pt`
 
 **CV Pipeline Output:**
-outputs/csv/student_summary.csv  
+`outputs/csv/student_summary.csv` 
 
 **ML Models:**
-models/trained_models/  
+`models/trained_models` 
+
+**Visualization:**
+`outputs/visualizations`
 
 **LLM Output:**
 Generated textual performance reports  
-
----
 
 ## KEY FEATURES
 
@@ -246,8 +227,6 @@ Generated textual performance reports
 - Automated report generation using LLM  
 - Modular and scalable architecture  
 
----
-
 ## USE CASES
 
 - Classroom performance evaluation  
@@ -255,8 +234,6 @@ Generated textual performance reports
 - Group discussion analysis  
 - Interview assessment  
 - Behavioral research  
-
----
 
 ## TECHNOLOGY STACK
 
@@ -267,8 +244,6 @@ Generated textual performance reports
 - XGBoost / LightGBM  
 - TensorFlow / PyTorch  
 - Transformers / LLM  
-
----
 
 ## CONCLUSION
 

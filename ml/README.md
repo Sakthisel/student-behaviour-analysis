@@ -2,8 +2,6 @@
 
 This section explains how student behavioral data is processed using Machine Learning and Deep Learning models to predict engagement levels.
 
----
-
 ## Dataset Input
 
 After the Computer Vision pipeline, the processed dataset is stored in CSV format.
@@ -11,12 +9,12 @@ After the Computer Vision pipeline, the processed dataset is stored in CSV forma
 Example:
 outputs/csv/student_summary.csv
 
+```csv
 student_id,attention_score,engagement_score,gd_score,target
 0,2.42,1.90,4.33,0
 2,2.14,1.73,3.88,0
 1,2.04,1.74,3.78,0
-
----
+```
 
 ## Data Processing Pipeline
 
@@ -31,19 +29,15 @@ The ML pipeline follows these steps:
 7. Model evaluation  
 8. Predictions  
 
----
-
 ## Load Data
 
 Load the dataset from CSV:
 
 Run:
-python -m ml.data_loader
+`python -m ml.data_loader`
 
 This reads:
-outputs/csv/student_summary.csv
-
----
+`outputs/csv/student_summary.csv`
 
 ## Data Preparation
 
@@ -52,8 +46,6 @@ Clean and preprocess the dataset:
 - Handle missing values  
 - Convert data types  
 - Normalize input format  
-
----
 
 ## Feature Transformation
 
@@ -67,8 +59,6 @@ Features used:
 - engagement_score  
 - gd_score  
 
----
-
 ## Train-Test Split
 
 Split dataset into:
@@ -78,8 +68,6 @@ Split dataset into:
 
 Typical ratio:
 80% training / 20% testing  
-
----
 
 ## Model Training
 
@@ -91,12 +79,10 @@ Multiple ML models are trained:
 - LightGBM  
 
 Run:
-python -m ml.main
+```python -m ml.main```
 
 Models are saved in:
 models/trained_models/
-
----
 
 ## LSTM Model (Deep Learning)
 
@@ -105,8 +91,6 @@ For sequential/temporal learning, LSTM is used.
 Purpose:
 - Capture time-based behavior patterns  
 - Improve prediction accuracy  
-
----
 
 ## Model Evaluation
 
@@ -118,8 +102,6 @@ Evaluate models using:
 - F1 Score  
 
 Best model is selected automatically.
-
----
 
 ## Predictions
 
@@ -140,22 +122,20 @@ gd_score = 4.3
 Output:
 MEDIUM  
 
----
-
 ## Predict Using Trained Model
 
 Batch prediction:
 
-python -m ml.predict
+`python -m ml.predict`
 
 Or programmatically:
 
+```python
 from ml.predict import predict_single_model
 
 result = predict_single_model(sample_dict)
 print(result)
-
----
+```
 
 ## Saved Artifacts
 
@@ -166,16 +146,12 @@ After training, the following files are saved:
 - models/trained_models/scaler.pkl  
 - models/trained_models/encoders.pkl  
 
----
-
 ## Key Notes
 
 - Ensure dataset is clean before training  
 - Features must match during training and prediction  
 - Always load scaler and encoders for inference  
 - LSTM requires properly shaped sequential data  
-
----
 
 ## Recommendation
 
@@ -184,8 +160,6 @@ For this project:
 - Use ensemble ML models for strong baseline performance  
 - Use LSTM for advanced sequence modeling  
 - Combine ML predictions with LLM for final insights  
-
----
 
 ## Summary
 
