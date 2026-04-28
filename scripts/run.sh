@@ -21,7 +21,7 @@ fi
 # ============================================
 
 echo "Checking project structure..."
-mkdir -p models/trained_models
+mkdir -p models/ml_trained_models
 mkdir -p outputs/csv
 
 # ============================================
@@ -85,4 +85,4 @@ echo ""
 echo "Outputs:"
 echo "- YOLO model: runs/trained_models/weights/best.pt"
 echo "- CSV output: outputs/csv/student_summary.csv"
-echo "- ML models: models/trained_models/"
+echo "- ML models: models/ml_trained_models/"

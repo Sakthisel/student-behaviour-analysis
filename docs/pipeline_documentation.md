@@ -42,7 +42,7 @@ Models:
 - LSTM
 
 Output:
-models/trained_models/
+`models/ml_trained_models/`
 
 4. LLM (llm)
 - Converts predictions into reports

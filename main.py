@@ -5,8 +5,8 @@ import time
 import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report
 
-from llm.llm_gemini import generate_report
-from ml.prediction import predict_batch
+from llm.inference.gemini import generate_report
+from ml.models.prediction import predict_batch
 from cv_pipelines.main import cv_pipelines
 
 

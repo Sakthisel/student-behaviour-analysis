@@ -2,6 +2,10 @@
 
 This module trains and runs a custom YOLO model for detecting task-specific objects (e.g., scale, blocks, tools, students) from images or videos.
 
+## Custom YOLO Architecture
+
+![YOLO Pipeline](./../docs/custom_yolo_architecture.png)
+
 ## Project Structure
 
 ```txt
@@ -18,16 +22,23 @@ custom_yolo/
 │   │   ├── train/            # Training labels
 │   │   └── val/              # Validation labels
 │
-│── models/                   # YOLO base / pretrained models
-│   └── yolov8n.pt
+├── data/
+│   ├── image_extraction.py    # Frame extraction
+│   └── split_train_val.py     # Dataset split
 │
-│── image_extraction.py       # Extract frames from video
-│── split_train_val.py        # Split dataset into train/val
-│── yolo_train.py             # Training script
-│── yolo_predict.py           # Inference script
-│── main.py                   # Runs training + prediction
-│── objects.yaml              # YOLO dataset configuration
-│── README.md
+├── training/
+│   └── yolo_train.py          # Training logic
+│
+├── inference/
+│   └── yolo_predict.py        # Detection logic
+│
+├── config/
+│   └── objects.yaml           # Class & dataset config
+│
+├── models/                    # Pretrained weights
+├── runs/                      # Training outputs (best.pt)
+│
+├── README.md
 ```
 
 ## Requirements
@@ -41,16 +52,12 @@ For GPU acceleration, install a CUDA-compatible version of PyTorch.
 
 ## How to Run
 
-### Step 0: Navigate to the project folder
-
-`cd custom_yolo`
-
 ### Step 1: Extract images from video
 
-`python image_extraction.py`
+`python -m custom_yolo.data.image_extraction`
 
 Input videos should be placed in:
-`videos/classroom_sample.mov`
+`../videos/classroom_sample.mov`
 
 ### Step 2: Annotate data using Label Studio
 
@@ -66,7 +73,7 @@ Steps:
 
 ### Step 3: Split dataset
 
-`python split_train_val.py`
+`python -m custom_yolo.data.split_train_val`
 
 This splits data from:
 - dataset/images/all/ → train/, val/
@@ -76,8 +83,8 @@ This splits data from:
 
 Ensure objects.yaml contains:
 
-train: `dataset/images/train`
-val: `dataset/images/val`
+train: `../dataset/images/train`
+val: `../dataset/images/val`
 
 nc: 4
 
@@ -89,7 +96,7 @@ names:
 
 ### Step 5: Train model and run prediction
 
-`python main.py`
+`python -m custom_yolo.main`
 
 This will:
 - Train YOLO on the custom dataset
@@ -100,8 +107,8 @@ This will:
 
 ## Output
 
-- Trained model: `runs/train_models/`
-- Predictions: `runs/inference_results/`
+- Trained model: `custom_yolo/runs/train_models/`
+- Predictions: `custom_yolo/runs/inference_results/`
 
 ## Important Notes
 

@@ -1,11 +1,11 @@
 from datasets import Dataset
 
-from llm.data_loader import load_llm_data
-from llm.generate_dataset import generate_llm_data
-from llm.preprocessing import prepare_llm_dataset
-from llm.tokenizer import load_tokenizer, tokenize_dataset
-from llm.model_loader import load_base_model, apply_lora
-from llm.training import train_llm
+from llm.data.data_loader import load_llm_data
+from llm.data.generate_dataset import generate_llm_data
+from llm.preprocessing.preprocessing import prepare_llm_dataset
+from llm.tokenizer.tokenizer import load_tokenizer, tokenize_dataset
+from llm.models.model_loader import load_base_model, apply_lora
+from llm.training.training import train_llm
 
 
 def main():
@@ -42,7 +42,7 @@ def main():
     # =============================
     print("\nTesting trained LLM...")
 
-    from llm.inference import generate_report
+    from llm.inference.inference import generate_report
 
     input_text = """Student ID: 1
     Attention Score: 2.00

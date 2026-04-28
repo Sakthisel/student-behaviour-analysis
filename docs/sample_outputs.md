@@ -33,7 +33,7 @@ CSV:
 `outputs/csv/student_summary.csv`
 
 Models:
-`models/trained_models/`
+`models/ml_trained_models/`
 
 YOLO:
 `runs/trained_models/weights/best.pt`

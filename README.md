@@ -17,6 +17,10 @@ The system processes input video data and performs the following:
 3. Quantifies engagement using Machine Learning and Deep Learning models  
 4. Generates structured outputs and detailed performance reports  
 
+## ARCHITECTURE
+
+![Architecture](docs/architecture.png)
+
 ## PROJECT STRUCTURE
 
 The project follows a modular and scalable architecture with clearly separated components for Computer Vision, Machine Learning, and LLM processing.
@@ -82,9 +86,7 @@ chmod +x setup.sh scripts/run.sh
 - setup.sh installs required dependencies
 - run.sh executes the end-to-end pipeline
 
-## ARCHITECTURE
-
-![Architecture](docs/architecture.png)
+## MODULE DETAILS
 
 ### 1. CUSTOM OBJECT DETECTION (YOLO)
 
@@ -96,7 +98,7 @@ A custom YOLO (You Only Look Once) model is trained to detect participants in gr
 - Optimized for classroom or discussion scenarios
 
 **Output:**
-runs/trained_models/weights/best.pt
+`runs/trained_models/weights/best.pt`
 
 **Command:**
 ```bash
@@ -125,7 +127,7 @@ This module handles video processing and feature extraction.
 - GD (Group Discussion) scores are computed for each student  
 
 **Final Output:**
-outputs/csv/student_summary.csv
+`outputs/csv/student_summary.csv`
 
 **Command:**
 ```bash
@@ -150,7 +152,7 @@ This module builds predictive models based on extracted features.
 - Learn complex relationships between features  
 
 **Model Output:**
-models/trained_models/
+`models/ml_trained_models/`
 
 **Command:**
 ```bash

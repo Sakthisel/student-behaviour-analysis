@@ -44,7 +44,7 @@ VIDEO_PATH = "videos/classroom_sample.mov"
 # =============================
 # TRAINED MODEL
 # =============================
-BEHAVIOUR_MODEL = "models/trained_models/behavior_model.pkl"
+BEHAVIOUR_MODEL = "models/ml_trained_models/behavior_model.pkl"
 
 # =============================
 # CV PIPELINES PATHS

@@ -2,6 +2,43 @@
 
 This section explains how student behavioral data is processed using Machine Learning and Deep Learning models to predict engagement levels.
 
+## ML Pipeline Architecture
+
+![CV Pipeline](../docs/ml_architecture.png)
+
+## ML Pipeline Structure
+
+```txt
+ml/
+│
+├── main.py                      # Entry point (train + evaluate pipeline)
+│
+├── config/
+│   └── config.py               # ML configuration (paths, params)
+│
+├── data/
+│   ├── data_loader.py          # Load dataset
+│   ├── preprocessing.py        # Data cleaning
+│   ├── transformation.py       # Feature engineering
+│   └── split.py                # Train-test split
+│
+├── models/
+│   ├── models.py               # Model definitions (RF, SVM, etc.)
+│   ├── training.py             # Training logic
+│   └── prediction.py           # Inference logic
+│
+├── evaluation/
+│   └── evaluation.py           # Metrics & evaluation
+│
+├── analysis/
+│   └── eda.py                  # Exploratory Data Analysis
+│
+├── utils/
+│   └── utils.py                # Helper functions
+│
+├── README.md
+```
+
 ## Dataset Input
 
 After the Computer Vision pipeline, the processed dataset is stored in CSV format.
@@ -82,7 +119,7 @@ Run:
 ```python -m ml.main```
 
 Models are saved in:
-models/trained_models/
+`models/ml_trained_models/`
 
 ## LSTM Model (Deep Learning)
 
@@ -141,10 +178,10 @@ print(result)
 
 After training, the following files are saved:
 
-- models/trained_models/best_ml_model.pkl  
-- models/trained_models/features.pkl  
-- models/trained_models/scaler.pkl  
-- models/trained_models/encoders.pkl  
+- models/ml_trained_models/best_ml_model.pkl  
+- models/ml_trained_models/features.pkl  
+- models/ml_trained_models/scaler.pkl  
+- models/ml_trained_models/encoders.pkl  
 
 ## Key Notes
 

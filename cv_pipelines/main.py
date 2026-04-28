@@ -8,13 +8,13 @@ import traceback
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from config import VIDEO_PATH
 
-from cv_pipelines.gaze_pipeline import gaze_pipeline
-from cv_pipelines.gesture_pipeline import gesture_pipeline
-from cv_pipelines.pose_pipeline import pose_pipeline
-from cv_pipelines.emotion_pipeline import emotion_pipeline
+from cv_pipelines.feature_extraction.gaze_pipeline import gaze_pipeline
+from cv_pipelines.feature_extraction.gesture_pipeline import gesture_pipeline
+from cv_pipelines.feature_extraction.pose_pipeline import pose_pipeline
+from cv_pipelines.feature_extraction.emotion_pipeline import emotion_pipeline
 
-from cv_pipelines.combine_pipeline import combine
-from cv_pipelines.gd_scoring import compute_scores
+from cv_pipelines.processing.combine_pipeline import combine
+from cv_pipelines.processing.gd_scoring import compute_scores
 
 
 # =============================
@@ -88,7 +88,6 @@ def cv_pipelines():
     # =============================
     # EMOTION PIPELINE
     # =============================
-    # Run emotion after parallel pipelines to avoid camera/video conflicts.
     run_safe(emotion_pipeline, "emotion", video_path)
 
     # =============================

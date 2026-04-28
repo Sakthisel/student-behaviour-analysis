@@ -5,13 +5,13 @@ os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["VECLIB_MAXIMUM_THREADS"] = "1"
 os.environ["NUMEXPR_NUM_THREADS"] = "1"
 
-from ml.data_loader import load_data
-from ml.preprocessing import clean_data
-from ml.eda import run_eda
-from ml.transformation import transform_features
-from ml.split import split_data
-from ml.training import train_ml_models, train_lstm_model
-from ml.prediction import predict_hybrid
+from ml.data.data_loader import load_data
+from ml.data.preprocessing import clean_data
+from ml.analysis.eda import run_eda
+from ml.data.transformation import transform_features
+from ml.data.split import split_data
+from ml.models.training import train_ml_models, train_lstm_model
+from ml.models.prediction import predict_hybrid
 
 
 def main():

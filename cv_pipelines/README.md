@@ -2,12 +2,38 @@
 
 This section explains how video data is processed using Computer Vision techniques to extract student behavioral features such as gaze, gesture, pose, and emotion.
 
+## CV Pipeline Architecture
+
+![CV Pipeline](../docs/cv_pipeline_architecture.png)
+
+## Project Structure
+
+```txt
+cv_pipelines/
+│
+├── main.py                     # Orchestrates all CV pipelines (parallel execution)
+│
+├── feature_extraction/
+│   ├── gaze_pipeline.py        # Gaze detection (attention)
+│   ├── gesture_pipeline.py     # Gesture/activity detection
+│   ├── pose_pipeline.py        # Pose estimation
+│   └── emotion_pipeline.py     # Emotion detection
+│
+├── processing/
+│   ├── combine_pipeline.py     # Merge all CSV outputs
+│   └── gd_scoring.py           # Compute final scores
+│
+├── bytetrack.yaml              # Multi-object tracking config
+│
+├── README.md                   # CV pipeline documentation
+```
+
 ## Input Data
 
 The pipeline takes video input of group discussions.
 
 Example:
-`videos/classroom_sample.mov`
+`../videos/classroom_sample.mov`
 
 ## Pipeline Overview
 
