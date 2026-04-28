@@ -2,10 +2,9 @@
 
 This module trains and runs a custom YOLO model for detecting task-specific objects (e.g., scale, blocks, tools, students) from images or videos.
 
----
-
 ## Project Structure
 
+```txt
 custom_yolo/
 │
 │── dataset/                  # Dataset root
@@ -29,42 +28,35 @@ custom_yolo/
 │── main.py                   # Runs training + prediction
 │── objects.yaml              # YOLO dataset configuration
 │── README.md
-
----
+```
 
 ## Requirements
 
 Install dependencies before running:
 
-pip install ultralytics opencv-python label-studio
+`pip install ultralytics opencv-python label-studio`
 
 Optional:
 For GPU acceleration, install a CUDA-compatible version of PyTorch.
-
----
 
 ## How to Run
 
 ### Step 0: Navigate to the project folder
 
-cd custom_yolo
-
----
+`cd custom_yolo`
 
 ### Step 1: Extract images from video
 
-python image_extraction.py
+`python image_extraction.py`
 
 Input videos should be placed in:
-inputs/classroom_video/
-
----
+`videos/classroom_sample.mov`
 
 ### Step 2: Annotate data using Label Studio
 
 Start Label Studio:
 
-label-studio start
+`label-studio start`
 
 Steps:
 - Open the UI in your browser
@@ -72,24 +64,20 @@ Steps:
 - Create bounding box annotations
 - Export annotations to dataset/labels/all/ in YOLO format
 
----
-
 ### Step 3: Split dataset
 
-python split_train_val.py
+`python split_train_val.py`
 
 This splits data from:
 - dataset/images/all/ → train/, val/
 - dataset/labels/all/ → train/, val/
 
----
-
 ### Step 4: Configure dataset (objects.yaml)
 
 Ensure objects.yaml contains:
 
-train: dataset/images/train
-val: dataset/images/val
+train: `dataset/images/train`
+val: `dataset/images/val`
 
 nc: 4
 
@@ -99,11 +87,9 @@ names:
   - scale
   - student
 
----
-
 ### Step 5: Train model and run prediction
 
-python main.py
+`python main.py`
 
 This will:
 - Train YOLO on the custom dataset
@@ -112,14 +98,10 @@ This will:
 - Run inference using the trained model
 - Save predictions (with bounding boxes) in runs/detect/
 
----
-
 ## Output
 
-- Trained model: runs/train/
-- Predictions: runs/detect/
-
----
+- Trained model: `runs/train_models/`
+- Predictions: `runs/inference_results/`
 
 ## Important Notes
 
@@ -131,8 +113,6 @@ This will:
 - The all/ folder acts as the master dataset
 - Ensure objects.yaml paths match your folder structure
 - GPU is highly recommended for faster training
-
----
 
 ## Summary
 
