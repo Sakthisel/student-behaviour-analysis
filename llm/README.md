@@ -2,12 +2,56 @@
 
 This section explains how to use student performance data within an LLM pipeline. It covers both fine-tuning (for local models) and using Google Gemini for inference.
 
+## LLM Pipeline Architecture
+
+![CV Pipeline](../docs/llm_architecture.png)
+
+## LLM Pipeline Structure
+
+```txt
+llm/
+│
+├── main.py                    # Entry point (run LLM pipeline)
+│
+├── config/
+│   └── config.py              # Model + path configs
+│
+├── data/
+│   ├── student_reports.jsonl  # Training dataset
+│   ├── data_loader.py         # Load dataset
+│   └── generate_dataset.py    # Convert CSV → JSONL
+│
+├── preprocessing/
+│   └── preprocessing.py       # Clean/format prompts
+│
+├── models/
+│   └── model_loader.py        # Load base + LoRA models
+│
+├── training/
+│   └── training.py            # Fine-tuning logic
+│
+├── inference/
+│   ├── inference.py           # Local LLM inference
+│   └── gemini.py              # Gemini API inference
+│
+├── prompts/
+│   └── prompt_builder.py      # Prompt templates
+│
+├── evaluation/
+│   └── evaluation.py          # Output evaluation
+│
+├── tokenizer/
+│   └── tokenizer.py           # Tokenization logic
+│
+├── README.md
+```
+
 ## Dataset Preparation Output
 
 After running the gaze, gesture, pose, and emotion pipelines, the final summary is stored in CSV format.
 
 Example:
-outputs/csv/student_summary.csv
+`outputs/csv/student_summary.csv`
 
 ```csv
 student_id,attention_score,engagement_score,gd_score,target
@@ -21,7 +65,7 @@ student_id,attention_score,engagement_score,gd_score,target
 Convert the dataset into JSONL format for LLM training or inference.
 
 Run:
-`python -m llm.generate_dataset`
+`python -m llm.data.generate_dataset`
 
 Example JSONL format:
 

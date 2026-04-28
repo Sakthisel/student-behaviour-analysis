@@ -32,7 +32,7 @@ Supported formats:
 ## Output
 
 `outputs/csv/student_summary.csv`
-`models/trained_models/`
+`models/ml_trained_models/`
 
 ## Notes
 

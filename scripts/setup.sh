@@ -55,7 +55,7 @@ fi
 # ============================================
 
 echo "Creating project folders..."
-mkdir -p models/trained_models
+mkdir -p models/ml_trained_models
 mkdir -p outputs/csv
 
 # ============================================

@@ -5,18 +5,18 @@ import sys
 # IMPORT CONFIG
 # ==========================
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from config import YOLO_V8_MODEL
+from config import *
 
 # ==========================
 # PATH SETUP
 # ==========================
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-from custom_yolo.yolo_predict import run_inference
-from custom_yolo.yolo_train import train_model
+from custom_yolo.inference.yolo_predict import run_inference
+from custom_yolo.training.yolo_train import train_model
 
 VIDEO_PATH = BASE_DIR / "videos/classroom_sample.mov"
-YOLO_OBJECT_PATH = BASE_DIR / "custom_yolo/objects.yaml"
+YOLO_OBJECT_PATH = BASE_DIR / "custom_yolo/config/objects.yaml"
 OUTPUT_PATH = BASE_DIR / "custom_yolo"
 
 YOLO_V8_MODEL_PATH = Path(YOLO_V8_MODEL or "models/yolo_models/yolov8n.pt")
