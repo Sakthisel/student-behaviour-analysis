@@ -11,3 +11,22 @@ body {
 .card {
   @apply bg-white rounded-2xl shadow-sm border border-slate-100;
 }
+
+.markdown h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+}
+
+.markdown p {
+  margin: 4px 0;
+}
+
+.markdown ul {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+
+.markdown li {
+  margin: 2px 0;
+}

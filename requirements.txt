@@ -55,6 +55,7 @@ lightgbm==4.3.0             # Fast gradient boosting framework
 streamlit==1.33.0           # Interactive web apps for ML
 fastapi==0.111.0            # Backend API framework
 uvicorn==0.30.1             # ASGI server for FastAPI
+python-multipart
 
 # =========================
 # Utilities
