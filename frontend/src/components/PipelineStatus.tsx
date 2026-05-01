@@ -22,7 +22,7 @@ export default function PipelineStatus({ status }: PipelineStatusProps) {
       <div className="space-y-4">
         {steps.map((step, index) => {
           const completed =
-            status === "done" || (status === "processing" && index < 3);
+            status === "done" || (status === "processing" && index < 2);
 
           return (
             <div key={step} className="flex items-center gap-3">

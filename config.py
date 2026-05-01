@@ -1,4 +1,7 @@
 import os
+from pathlib import Path
+
+BASE_DIR1 = Path(__file__).resolve().parent
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,7 +42,18 @@ YOLO_FACE_MODEL_PATH = "models/yolo_models/yolov8n-face.pt"
 # =============================
 # INPUT PATH
 # =============================
-VIDEO_PATH = "videos/classroom_sample.mov"
+# VIDEO_PATH = "videos/classroom_sample.mov"
+
+VIDEO_PATH = Path(
+    os.getenv(
+        "VIDEO_PATH",
+        BASE_DIR1 / "videos" / "classroom_sample.mov"
+    )
+)
+
+OUTPUT_CSV_DIR = BASE_DIR1 / "outputs" / "csv"
+STUDENT_SUMMARY_PATH = OUTPUT_CSV_DIR / "student_summary.csv"
+
 
 # =============================
 # TRAINED MODEL

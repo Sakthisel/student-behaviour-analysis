@@ -5,7 +5,8 @@ import { BarChart3, Users } from "lucide-react";
 import Header from "./components/Header";
 import FileUpload from "./components/FileUpload";
 import PipelineStatus from "./components/PipelineStatus";
-import MetricCard from "./components/MetricCard";
+import { TrendingUp } from "lucide-react";
+
 import ResultsCharts from "./components/ResultsCharts";
 import ResultsTable from "./components/ResultsTable";
 import ReportCard from "./components/ReportCard";
@@ -86,7 +87,6 @@ export default function App() {
               setVideo={setVideo}
               status={status}
               onAnalyze={handleAnalyze}
-              loading={false}
             />
           </motion.div>
 
@@ -94,37 +94,70 @@ export default function App() {
         </section>
 
         <section className="grid md:grid-cols-4 gap-4">
-          <MetricCard
-            title="Participants"
-            value={summary.participants}
-            icon={Users}
-          />
-          <MetricCard
-            title="Avg Attention"
-            value={summary.attention}
-            icon={BarChart3}
-          />
-          <MetricCard
-            title="Avg Engagement"
-            value={summary.engagement}
-            icon={BarChart3}
-          />
-          <MetricCard
-            title="Avg GD Score"
-            value={summary.gd}
-            icon={BarChart3}
-          />
+          <div className="p-5 rounded-2xl bg-white border shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-slate-500">Participants</p>
+              <Users className="text-indigo-500" size={18} />
+            </div>
+
+            <p className="text-2xl font-semibold text-slate-800 mt-2">
+              {summary.participants}
+            </p>
+
+            <div className="mt-3 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="h-full w-3/4 bg-indigo-500 rounded-full" />
+            </div>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-white border shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-slate-500">Avg Attention</p>
+              <TrendingUp className="text-emerald-500" size={18} />
+            </div>
+
+            <p className="text-2xl font-semibold text-slate-800 mt-2">
+              {summary.attention}
+            </p>
+
+            <div className="mt-3 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="h-full w-2/3 bg-emerald-500 rounded-full" />
+            </div>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-white border shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-slate-500">Avg Engagement</p>
+              <BarChart3 className="text-blue-500" size={18} />
+            </div>
+
+            <p className="text-2xl font-semibold text-slate-800 mt-2">
+              {summary.engagement}
+            </p>
+
+            <div className="mt-3 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="h-full w-1/2 bg-blue-500 rounded-full" />
+            </div>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-white border shadow-sm hover:shadow-md transition">
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-slate-500">Avg GD Score</p>
+              <BarChart3 className="text-amber-500" size={18} />
+            </div>
+
+            <p className="text-2xl font-semibold text-slate-800 mt-2">
+              {summary.gd}
+            </p>
+
+            <div className="mt-3 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="h-full w-4/5 bg-amber-500 rounded-full" />
+            </div>
+          </div>
         </section>
 
         <ResultsCharts trendData={trendData} students={students} />
-
-        <section className="grid lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <ResultsTable students={students} />
-          </div>
-
-          <ReportCard report={report} />
-        </section>
+        <ResultsTable students={students} />
+        <ReportCard report={report} />
       </main>
     </div>
   );

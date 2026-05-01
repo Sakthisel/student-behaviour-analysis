@@ -13,8 +13,8 @@ from cv_pipelines.main import cv_pipelines
 # =============================
 # MAIN
 # =============================
-if __name__ == "__main__":
 
+def run_main_pipeline():
     start_time = time.time()
 
     df = cv_pipelines()
@@ -120,3 +120,6 @@ if __name__ == "__main__":
     # =============================
     total_time = round(time.time() - start_time, 2)
     print(f"\nFinished Successfully in {total_time}s", flush=True)
+
+if __name__ == "__main__":
+    run_main_pipeline()

@@ -17,7 +17,11 @@ custom_yolo/models
 llm/data
 
 # frontend
-node_modules
+frontend/node_modules
+frontend/.vite
+
+# backend
+backend/uploads
 
 # Logs
 logs
@@ -28,7 +32,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
 dist
 dist-ssr
 *.local
