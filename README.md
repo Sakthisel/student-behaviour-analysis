@@ -258,5 +258,6 @@ This project demonstrates a complete AI pipeline combining Computer Vision, Mach
 Senior / Lead Frontend & Full Stack Engineer  
 📧 Email: sakthisel007@gmail.com  
 🐙 GitHub: https://github.com/Sakthisel
+
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=for-the-badge)](https://sakthivelv-portfolio.netlify.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sakthisel)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sakthiselv)
