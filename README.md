@@ -1,5 +1,23 @@
 # STUDENT BEHAVIOUR ANALYSIS USING COMPUTER VISION, MACHINE LEARNING & LLM
 
+![Project](https://img.shields.io/badge/Project-AI%20Behaviour%20Analysis-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Domain](https://img.shields.io/badge/Domain-Computer%20Vision%20%2B%20AI-purple?style=for-the-badge)
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?style=for-the-badge&logo=opencv)
+![YOLO](https://img.shields.io/badge/YOLO-Ultralytics-orange?style=for-the-badge)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Tracking-purple?style=for-the-badge)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-yellow?style=for-the-badge&logo=scikit-learn)
+![XGBoost](https://img.shields.io/badge/XGBoost-Boosting-red?style=for-the-badge)
+![LightGBM](https://img.shields.io/badge/LightGBM-Boosting-lightgreen?style=for-the-badge)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?style=for-the-badge&logo=tensorflow)
+![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red?style=for-the-badge&logo=pytorch)
+![Transformers](https://img.shields.io/badge/Transformers-HuggingFace-yellow?style=for-the-badge)
+![LLM](https://img.shields.io/badge/LLM-AI-blueviolet?style=for-the-badge)
+![React](https://img.shields.io/badge/React-Frontend-blue?style=for-the-badge&logo=react)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-teal?style=for-the-badge&logo=fastapi)
+
 This project is a comprehensive end-to-end intelligent system designed to analyze student behavior during group discussions or collaborative environments. It combines Computer Vision, Machine Learning, Deep Learning, and Large Language Models to extract meaningful insights from video data and generate actionable performance reports.
 
 ## PROJECT OBJECTIVE
@@ -239,14 +257,23 @@ Generated textual performance reports
 
 ## TECHNOLOGY STACK
 
-- Python  
-- OpenCV  
-- YOLO (Ultralytics)
-- Mediapipe
-- Scikit-learn  
-- XGBoost / LightGBM  
-- TensorFlow / PyTorch  
-- Transformers / LLM
+### AI / Machine Learning
+- **Scikit-learn** – Traditional ML models  
+- **XGBoost / LightGBM** – Gradient boosting algorithms  
+- **TensorFlow / PyTorch** – Deep learning (LSTM, model training)  
+- **Transformers / LLMs** – AI-based report generation and insights  
+
+### Computer Vision
+- **OpenCV** – Image and video processing  
+- **YOLO (Ultralytics)** – Object detection  
+- **MediaPipe** – Pose, gesture, and facial tracking  
+
+### Backend
+- **Python** – Core application logic  
+- **FastAPI** – High-performance API framework  
+
+### Frontend
+- **React.js** – Interactive UI and dashboard  
 
 ## CONCLUSION
 
